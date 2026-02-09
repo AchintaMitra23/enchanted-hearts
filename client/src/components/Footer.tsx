@@ -10,7 +10,7 @@ interface FooterProps {
   href: string;
 }
 
-const Footer = (props: FooterProps) => {
+export default function Footer(props: FooterProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -82,6 +82,4 @@ const Footer = (props: FooterProps) => {
       </div>
     </motion.div>
   );
-};
-
-export default Footer;
+}

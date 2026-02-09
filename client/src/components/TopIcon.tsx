@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Heart, Sparkles } from "lucide-react";
 import React from "react";
 
-const TopIcon = () => {
+export default function TopIcon() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -17,6 +17,4 @@ const TopIcon = () => {
       <Sparkles className="w-5 h-5 sm:w-5 sm:h-5 text-red-500 fill-pink-200" />
     </motion.div>
   );
-};
-
-export default TopIcon;
+}

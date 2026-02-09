@@ -28,7 +28,7 @@ export function PolaroidCard({ memory, index }: PolaroidCardProps) {
         transition: { duration: 0.2 },
       }}
       className="relative group bg-rose-200 p-2 pb-10 shadow-md hover:shadow-xl transition-shadow duration-300 w-full max-w-xs mx-auto"
-      style={{ rotate: `${rotation}deg` }}
+      style={{ rotate: `${rotation}deg`, borderRadius: "5px" }}
     >
       <div className="aspect-[1] overflow-hidden bg-gray-100 mb-10 border border-gray-500">
         <img

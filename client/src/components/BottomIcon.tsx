@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import React from "react";
 
-const BottomIcon = () => {
+export default function BottomIcon() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -19,6 +19,4 @@ const BottomIcon = () => {
       <div className="h-px w-5 sm:w-15 bg-gradient-to-l from-transparent to-red-500" />
     </motion.div>
   );
-};
-
-export default BottomIcon;
+}

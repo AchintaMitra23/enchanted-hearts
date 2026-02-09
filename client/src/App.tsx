@@ -14,6 +14,8 @@ import Gallery from "@/pages/Gallery";
 import SecretQuestion from "@/pages/SecretQuestion";
 import FinalNote from "@/pages/FinalNote";
 import NotFound from "@/pages/not-found";
+import ValentineQNA from "./pages/ValentineQNA";
+import PasswordGate from "./pages/PasswordGate";
 
 function AnimatedRoutes() {
   const [location] = useLocation();
@@ -38,7 +40,7 @@ function AnimatedRoutes() {
         </Route>
         <Route path="/secret-question">
           <PageTransition>
-            <SecretQuestion />
+            <PasswordGate />
           </PageTransition>
         </Route>
         <Route path="/final">

@@ -7,7 +7,7 @@ interface HeaderProps {
   subHeading: string;
 }
 
-const Header = (props: HeaderProps) => {
+export default function Header(props: HeaderProps) {
   return (
     <motion.header
       initial={{ opacity: 0, y: 30 }}
@@ -62,6 +62,4 @@ const Header = (props: HeaderProps) => {
       </motion.div>
     </motion.header>
   );
-};
-
-export default Header;
+}
