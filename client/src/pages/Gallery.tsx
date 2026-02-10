@@ -5,8 +5,8 @@ import eyes from "../../public/eyes1.jpg";
 import birthdayPhoto from "../../public/birthday.jpg";
 import smile from "../../public/smile.jpg";
 import catFace from "../../public/cat-face.jpg";
-import look from '../../public/Nil_Solo_10.jpg';
-import saree from '../../public/saree.jpg';
+import look from "../../public/Nil_Solo_10.jpg";
+import saree from "../../public/saree.jpg";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { usePartner } from "@/hooks/use-partner";
@@ -60,7 +60,7 @@ export default function Gallery() {
       rotation: 5,
     },
     {
-      id: 5,
+      id: 6,
       url: saree,
       type: "image",
       caption: "Timeless Elegance",

@@ -50,7 +50,7 @@ export const valentineQuestions = [
 export default function ValentineQNA() {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState(
-    Array(valentineQuestions.length).fill(""),
+    valentineQuestions.map((q) => `${q.day} : `),
   );
 
   useEffect(() => {
@@ -111,10 +111,12 @@ export default function ValentineQNA() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               placeholder="Write from your heart..."
-              value={answers[current]}
+              value={answers[current].split(" :")[1].trim()}
               onChange={(e) => {
                 const updated = [...answers];
-                updated[current] = e.target.value;
+                let value = updated[current];
+                updated[current] =
+                  value.split(" :")[0] + " : " + e.target.value;
                 setAnswers(updated);
               }}
               className="w-full rounded-3xl p-5 text-pink-600 font-semibold"
@@ -126,7 +128,7 @@ export default function ValentineQNA() {
             />
           </motion.div>
 
-          {answers[current].trim() && (
+          {answers[current].split(" :")[1].trim() && (
             <motion.button
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -137,7 +139,7 @@ export default function ValentineQNA() {
               onClick={handleNext}
             >
               <span className="relative flex items-center justify-center gap-2 text-bold text-lg">
-                {current === 7 ? "Finish ❤️" : "Next"}
+                {current === 6 ? "Finish ❤️" : "Next"}
               </span>
             </motion.button>
           )}
