@@ -111,12 +111,10 @@ export default function ValentineQNA() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               placeholder="Write from your heart..."
-              value={answers[current].split(" :")[1].trim()}
+              value={answers[current]}
               onChange={(e) => {
                 const updated = [...answers];
-                let value = updated[current];
-                updated[current] =
-                  value.split(" :")[0] + " : " + e.target.value;
+                updated[current] = e.target.value;
                 setAnswers(updated);
               }}
               className="w-full rounded-3xl p-5 text-pink-600 font-semibold"
@@ -129,21 +127,18 @@ export default function ValentineQNA() {
             />
           </motion.div>
 
-          {answers[current].split(" :")[1].trim() && (
-            <motion.button
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative w-half px-10 py-3 text-black-800 rounded-2xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden bg-rose-300 mt-5"
-              onClick={handleNext}
-            >
-              <span className="relative flex items-center justify-center gap-2 text-bold text-lg">
-                {current === 6 ? "Finish ❤️" : "Next"}
-              </span>
-            </motion.button>
-          )}
+          <motion.button
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative w-half px-10 py-3 text-black-800 rounded-2xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden bg-rose-300 mt-5"
+            onClick={handleNext}
+          >
+            <span className="relative flex items-center justify-center gap-2 text-bold text-lg">
+              {current === 6 ? "Finish ❤️" : "Next"}
+            </span>
+          </motion.button>
         </motion.div>
       </div>
     </div>
