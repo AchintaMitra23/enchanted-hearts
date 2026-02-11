@@ -31,7 +31,7 @@ export default function PasswordGate() {
           initial={{ opacity: 0, scale: 0.5, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
-          className="p-6 md:p-6 rounded-3xl shadow-2xl border-2 border-red-500 text-center relative overflow-hidden bg-gradient-to-br from-amber-50 via-rose-50 to-red-50"
+          className="p-6 md:p-6 rounded-3xl shadow-2xl text-center relative overflow-hidden bg-image card-3d"
         >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -40,13 +40,14 @@ export default function PasswordGate() {
             className="space-y-6 my-5 relative z-10"
           >
             <p className="text-8xl">🔒</p>
-            <p className="text-lg text-amber-600 leading-relaxed font-body px-4 text-bold">
+            <p className="text-lg text-amber-400 leading-relaxed font-body px-4 text-bold">
               I've been carrying this in my heart for so long. This memories and
               journeys only for one heart. If that heart is yours, you already
               know the key.
               <br />
+              <br />
               <span className="text-gray-400 font-mono italic text-sm">
-                (HINT: Place)
+                HINT: Place
               </span>
             </p>
           </motion.div>
@@ -55,12 +56,12 @@ export default function PasswordGate() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
             type="password"
-            placeholder="Enter our secret..."
+            placeholder="Enter your place ..."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full rounded-3xl p-5 text-pink-600 font-semibold font-mono"
             style={{
-              boxShadow: "2px 2px 2px 2px pink",
+              boxShadow: "0 0 2px 2px pink",
               outline: 0,
               border: 0,
             }}
