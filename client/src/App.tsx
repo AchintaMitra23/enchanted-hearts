@@ -8,14 +8,13 @@ import { PageTransition } from "@/components/PageTransition";
 import { MusicPlayer } from "@/components/MusicPlayer";
 
 // Pages
-import Landing from "@/pages/Landing";
 import Timeline from "@/pages/Timeline";
 import Gallery from "@/pages/Gallery";
-import SecretQuestion from "@/pages/SecretQuestion";
 import FinalNote from "@/pages/FinalNote";
 import NotFound from "@/pages/not-found";
-import ValentineQNA from "./pages/ValentineQNA";
 import PasswordGate from "./pages/PasswordGate";
+import ValentineQNA from "./pages/ValentineQNA";
+import Landing from "./pages/Landing";
 
 function AnimatedRoutes() {
   const [location] = useLocation();
@@ -24,6 +23,11 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Switch location={location}>
         <Route path="/enchanted-hearts/">
+          <PageTransition>
+            <PasswordGate />
+          </PageTransition>
+        </Route>
+        <Route path="/landing">
           <PageTransition>
             <Landing />
           </PageTransition>
@@ -40,7 +44,7 @@ function AnimatedRoutes() {
         </Route>
         <Route path="/secret-question">
           <PageTransition>
-            <PasswordGate />
+            <ValentineQNA />
           </PageTransition>
         </Route>
         <Route path="/final">

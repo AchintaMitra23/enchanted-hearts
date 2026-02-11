@@ -1,23 +1,24 @@
 import { useState } from "react";
-import ValentineQNA from "./ValentineQNA";
 import { motion } from "framer-motion";
+import { useLocation } from "wouter";
+import { useAudio } from "@/hooks/use-audio";
 
 const SECRET_PASSWORD = "switzerland";
 
 export default function PasswordGate() {
   const [password, setPassword] = useState("");
   const [lock, setLock] = useState(true);
+  const [, setLocation] = useLocation();
+  const { toggle } = useAudio();
 
   if (lock && password === SECRET_PASSWORD) {
     setLock(false);
   }
 
   if (!lock) {
-    return <ValentineQNA />;
+    toggle();
+    setLocation("/landing");
   }
-
-  const heading =
-    "This memories and journeys only for one heart. If that heart is yours, you already know the key.";
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
@@ -40,10 +41,13 @@ export default function PasswordGate() {
           >
             <p className="text-8xl">🔒</p>
             <p className="text-lg text-amber-600 leading-relaxed font-body px-4 text-bold">
-              {heading}
-            </p>
-            <p className="text-sm text-gray-400 font-mono italic font-semibold">
-              <span>( HINT : The place, you dreamt of )</span>
+              I've been carrying this in my heart for so long. This memories and
+              journeys only for one heart. If that heart is yours, you already
+              know the key.
+              <br />
+              <span className="text-gray-400 font-mono italic text-sm">
+                (HINT: Place)
+              </span>
             </p>
           </motion.div>
           <motion.input

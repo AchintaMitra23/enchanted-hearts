@@ -121,10 +121,11 @@ export default function ValentineQNA() {
               }}
               className="w-full rounded-3xl p-5 text-pink-600 font-semibold"
               style={{
-                boxShadow: "2px 2px 2px 2px pink",
+                boxShadow: "0 0 2px 2px pink",
                 outline: 0,
                 border: 0,
               }}
+              rows={10}
             />
           </motion.div>
 

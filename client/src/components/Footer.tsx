@@ -31,7 +31,7 @@ export default function Footer(props: FooterProps) {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 space-y-6 sm:space-y-8 text-center">
+      <div className="relative z-10 space-y-10 text-center">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -41,35 +41,35 @@ export default function Footer(props: FooterProps) {
         >
           {props.upperText}
         </motion.p>
-        <br />
-        <Link href={props.href}>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-6 py-3 bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 text-white rounded-full font-mono text-md shadow-xl shadow-red-300 overflow-hidden will-change-transform touch-manipulation font-bold"
-          >
-            <motion.div
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.5, 0, 0.5],
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="absolute inset-0 bg-white/20 rounded-full"
-            />
-
-            <span className="relative flex items-center gap-2">
-              {props.buttonText}
+        <motion.div>
+          <Link href={props.href}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative px-6 py-3 bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 text-white rounded-full font-mono text-md shadow-xl shadow-red-300 overflow-hidden will-change-transform touch-manipulation font-bold"
+            >
               <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="will-change-transform"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </motion.div>
-            </span>
-          </motion.button>
-        </Link>
-        <br />
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.5, 0, 0.5],
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute inset-0 bg-white/20 rounded-full"
+              />
+
+              <span className="relative flex items-center gap-2">
+                {props.buttonText}
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="will-change-transform"
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </motion.div>
+              </span>
+            </motion.button>
+          </Link>
+        </motion.div>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
