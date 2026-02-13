@@ -84,7 +84,7 @@ export default function Gallery() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-6">
         <Header
           heading="The Muse Art Gallery"
-          subHeading="Nilanjana, the muse where every love story begins."
+          subHeading="Kutus, the muse where every love story begins."
         />
 
         <motion.div

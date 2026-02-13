@@ -7,7 +7,7 @@ export const valentineQuestions = [
     day: "Rose Day",
     emoji: "🌹",
     question:
-      "Nilanjana, when you think about us, what feelings bloom in your heart like a rose?",
+      "Kutus, when you think about us, what feelings bloom in your heart like a rose?",
   },
   {
     day: "Propose Day",
