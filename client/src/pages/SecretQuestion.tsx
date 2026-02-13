@@ -7,12 +7,13 @@ import sendEmail from "@/helper/EmailHelper";
 export default function SecretQuestion() {
   const [count, setCount] = useState(0);
   const [msg, setMsg] = useState<string | null>(null);
+  const [giftMessage, setGiftMessage] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
     const send = async () => {
       try {
-        const message = await sendEmail();
+        const message = await sendEmail(false);
         if (message != null) {
           setMsg(message);
         }
@@ -22,6 +23,17 @@ export default function SecretQuestion() {
     };
     send();
   }, []);
+
+  const handleSent = async () => {
+    try {
+      const message = await sendEmail(true);
+      if (message != null) {
+        setGiftMessage(message);
+      }
+    } catch (err) {
+      setGiftMessage("Sorry!!! unable to send 😢");
+    }
+  };
 
   const surpriseQuestion =
     "Kutus, you’re the most beautiful gift my life has ever received… tell me honestly, am I your favorite gift too?";
@@ -74,13 +86,14 @@ export default function SecretQuestion() {
               transition={{ delay: 0.8 }}
               className="space-y-3 mb-5 relative z-10"
             >
-              <motion.a
-                className="p-3 border-2 rounded-2xl bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 text-md text-white leading-relaxed font-body text-bold"
-                download={true}
-                href=""
+              <motion.button
+                className="px-6 py-3 border-0 rounded-2xl text-md text-rose-800 leading-relaxed font-body text-bold"
+                onClick={handleSent}
+                disabled={giftMessage != null}
+                style={{ boxShadow: "20px -10px 40px -15px black inset" }}
               >
-                🎁 Download Your Gift
-              </motion.a>
+                {giftMessage == null ? "🎁 Get My Gift" : giftMessage}
+              </motion.button>
             </motion.div>
 
             <motion.div
